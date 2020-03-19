@@ -54,11 +54,11 @@ $(function() { new (function(){
 	var ticker = new (function(){
 		var me = this;
 		window.requestAnimFrame = (function(){
-			return  window.requestAnimationFrame       || 
-				window.webkitRequestAnimationFrame || 
-				window.mozRequestAnimationFrame    || 
-				window.oRequestAnimationFrame      || 
-				window.msRequestAnimationFrame     || 
+			return  window.requestAnimationFrame       ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame    ||
+				window.oRequestAnimationFrame      ||
+				window.msRequestAnimationFrame     ||
 				function(/* function */ callback, /* DOMElement */ element){
 					window.setTimeout(callback, 1000 / 60);
 				};
@@ -82,7 +82,7 @@ $(function() { new (function(){
 			requestAnimFrame(animate);
 		})();
 	})();
-	
+
 	this.topNav = undefined;
 	this.players = Players;
 	this.afterConfigure = function(){

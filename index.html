@@ -21,10 +21,15 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
 	<link rel="manifest" href="images/favicon/site.webmanifest">
-	<!-- <link href="leaflet/leaflet.css"/>
-	<script src="leaflet/leaflet.js"></script> -->
-	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script> -->
+	<link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+	<style media="screen">
+		@media (min-width:992px) {
+			.contact {
+				position: relative;
+				left: 49%;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -44,14 +49,14 @@
 	<nav class="navbar navbar-default navbar-fixed-top page-transition colors-e background-solid" role="navigation" id="top-nav">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html"><img src="images/GG_Logo2" alt=""></a>
+				<a class="navbar-brand" href="index.html"><img src="images/GG_Logo2.png" alt=""></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#home" class="hover-effect">Home</a></li>
 					<li><a href="#about" class="hover-effect">What We Do</a></li>
 					<li><a href="#team" class="hover-effect">Who We Are</a></li>
-					<li><a href="#services" class="hover-effect">Products</a></li>
+					<li><a href="#blog" class="hover-effect">Blog</a></li>
 					<li><a href="#testimonials" class="hover-effect">Testimonials</a></li>
 					<li><a href="#contact" class="hover-effect">Contact</a></li>
 				</ul>
@@ -78,9 +83,17 @@
 			<a class="cross" href="#"></a>
 		</div>
 		<div class="overlay-view">
-			<div id="mapid" style="height:180px;"></div>
+			<!-- <h1>Hello Lynn's Map</h1>
+			<div class="map-view"> -->
+			<div id="map" style="height:800px;"></div>
+			<!-- </div> -->
+			<!-- <div class="map-canvas" data-latitude="42.487606" data-longitude="-71.115661" data-zoom="14">
+				<div class="map-marker" data-latitude="42.487606" data-longitude="-71.115661" data-text="Our awesome location"></div>
+				<div class="map-marker" data-latitude="42.485100" data-longitude="-71.113256" data-text="Our sales office"></div>
+			</div> -->
 		</div>
 	</div>
+
 	<div class="overlay-window credits-overlay colors-g background-95-g">
 		<div class="overlay-control background-85-d">
 			<a class="cross" href="#"></a>
@@ -88,14 +101,14 @@
 		<div class="overlay-view">
 		</div>
 	</div>
-	<div class="gate colors-e background-solid">
+	<!-- <div class="gate colors-e background-solid">
 		<div class="gate-bar background-heading-a"></div>
 		<ul class="loader">
 			<li class="background-100-g"></li>
 			<li class="background-100-b"></li>
 			<li class="background-100-f"></li>
 		</ul>
-	</div>
+	</div> -->
 	<!-- BEGIN: Page content -->
 	<section id="home">
 		<div class="view">
@@ -110,7 +123,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div id="mapid" style="height:500px;"></div> -->
 	</section>
 	<section id="about">
 		<div class="view">
@@ -120,42 +132,58 @@
 				<div class="container">
 					<h2>About</h2>
 					<p class="header-details"><span class="highlight">We Create</span> Awesome Stuff</p>
-					<p class="lead">We monitor <span class="highlight">how the earth changes over time.</span> We quantify the change that is relevant to your work and provide you with the analysis you need to make an informed decision.
-						We do this by tapping into satellites with almost daily global coverage, use powerful cloud computing tools and develop machine learning algorithms to extract the relevant data.
-						We know the satellites, they know the reality on the ground.</p>
-					<div class="row">
-						<div class="col-md-4">
+					<p class="lead">We monitor <span class="highlight">how the earth changes over time.</span>
+						We quantify the change that is relevant to your work and provide you with the analysis you need to make
+						an informed decision. We do this by tapping into satellites with almost daily global coverage, using powerful cloud computing tools and developing machine
+						learning algorithms to extract the relevant data. This method is scalable, affordable and provides a historical perspective.
+					</p>
+					<div class="row" style="margin-left: 5em;">
+						<div class="col-md-4" style="width: 45.333333%;">
 							<div class="col-icon">
 								<i class="li_cloud"></i>
 							</div>
 							<div class="col-content">
 								<h4>Crop <span class="highlight">Health</span></h4>
-								<p>Satellite surveillance provides timely and detailed information to manage crop production, such as plant health, soil moisture, rainfall
-									and ground temperature. Our system provides commercial farmers with data related to the health of their crop and associated
+								<p style="text-align: justify;">Satellite surveillance provides timely and detailed information to manage crop production, such as plant health, soil moisture, rainfall
+									and ground temperature. Our system provides mid and large size farmers with data related to the health of their crop and associated
 									information twice a month.</p>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4" style="width: 45.333333%;">
+							<div class="col-icon">
+								<i class="li_location"></i>
+							</div>
+							<div class="col-content">
+								<h4>Forest <span class="highlight">Identification</span></h4>
+								<p style="text-align: justify;">
+									Deforestation is devastating the African continent. Satellite surveillance is a powerful tool in the hands of stakeholders. We can quantify
+									tree cover within a particular area, determine forest type, such as commercial versus natural, and monitor how the area is changing over time.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-4" style="width: 45.333333%;">
 							<div class="col-icon">
 								<i class="li_eye"></i>
 							</div>
 							<div class="col-content">
-								<h4>Quantifying Crops <span class="highlight">And Yeilds</span></h4>
-								<p>Through a sensor, each plant has a unique spectral fingerprint and once this fingerprint is identified, large areas
-									can be scanned using machine learning to search for the same signature. This allows us to quantify the square kilometres of a specific
-									crop in a specific area and estimate its yield.
+								<h4>Quantifying Crops <span class="highlight">And Yields</span></h4>
+								<p style="text-align: justify;">
+									Through satellite sensors, each plant has a unique spectral fingerprint and once this fingerprint is identified, large areas can be scanned using machine
+									learning to search for this plant. This allows us to quantify the square kilometres of a specific crop in a specific area. Combining it with ground-collected
+									data enables us to estimate yield.
 								</p>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4" style="width: 45.333333%;">
 							<div class="col-icon">
 								<i class="li_world"></i>
 							</div>
 							<div class="col-content">
-								<h4>Forest <span class="highlight">Identification</span></h4>
-								<p>Deforestation is devastating in the African continent due to weak regulations and minimal monitoring. With satellite surveillance, a powerful
-									source of almost daily updates. We typically use this analysis to quantify tree cover within a limited area and analyze it further, e.g.
-									SQ KM of forest cover, forest type etc. and how they change over time, e.g. loss due to fire or harvesting.
+								<h4>Tailored <span class="highlight">Geospatial Analysis</span></h4>
+								<p style="text-align: justify;">We also tailor our analysis specific to your needs.For example, monitoring of urban environments for buildings/construction, tree cover,
+									green space etc. to aid authorities in urban planning and service delivery, tools to auto-update QGIS print-ready maps at the click of a button,
+									auto-updating web maps powered by Google Sheets that visualise data on ground, mobile data collection tools and online/offline GIS systems,
+									facilitation of aerial LiDAR and underwater bathymetric surveys in extremely harsh environments.
 								</p>
 							</div>
 						</div>
@@ -165,15 +193,44 @@
 		</div>
 	</section>
 	<section id="team">
-		<div class="view">
+		<div class="view" id="who-we-are">
 			<div class="content colors-h">
+				<h2>Who We Are</h2>
+				<p class="header-details"><span class="highlight">We Have</span> Awesome People</p>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 stretch-height pane">
+							<div class="view fluid-height">
+								<img src="images/Group_picture.png" />
+							</div>
+						</div>
+						<div class="col-md-6  stretch-height pane">
+							<div class="view fluid-height">
+								<div class="content incut">
+									<div class="position-middle-center">
+										<p class="subtitle highlight"><strong>We create innovative, accessible geo-intelligence to drive better decision-making.</strong></p>
+										<p>We are a Ugandan/Irish company. We believe in simplicity. We believe in creating impact. We believe in constant improvement and evolution.
+											We use open source software where we can and contribute to its development.
+										</p>
+										<p>Our goal is to equip you with the information you need to make
+											better decisions.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="view">
+			<div class="content colors-e">
 				<div class="container">
 					<h2>Team</h2>
 					<p class="header-details"><span class="highlight">Who </span>We Are</p>
-					<p class="lead">Our success depends on the <strong class="highlight">strength of our team.</strong>We come from a variety of backgrounds,
-						such as humanitarian agencies and engineering firms, which makes our problem-solving brainstorms intense,
-						enjoyable and productive.<br />
-						Drop by our office. Meet the team. Tell us about your work and let's see if we’re a fit..</p>
+					<p class="lead">Our success depends on the <strong class="highlight">strength of our team.</strong>We come from a variety of backgrounds, such as classic Geographical Information Systems,
+						software development, urban planning, physics and commercial and humanitarian ops. This makes our problem-solving brainstorms intense, interesting
+						and productive.<br />
+						Drop by our office and meet the team.</p>
 					<div class="post-body background-75-e">
 						<div class="post-image">
 							<div class="slider">
@@ -336,7 +393,7 @@
 										</div>
 										<div class="caption">
 											<p>
-												<span class="title">Person</span>
+												<span class="title">Liberty</span>
 												<br />
 												<span class="highlight">Office Manager</span>
 											</p>
@@ -389,72 +446,44 @@
 				</div>
 			</div>
 		</div>
-		<div class="view" id="who-we-are">
-			<div class="content pane">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-md-6 stretch-height pane">
-							<div class="view fluid-height">
-								<img src="images/Group_picture.png" />
-							</div>
-						</div>
-						<div class="col-md-6  stretch-height pane">
-							<div class="view fluid-height">
-								<div class="content incut colors-e background-solid" style="background-color: #fdf3f0;">
-									<div class="position-middle-center">
-										<h3 class="text-left"><span class="highlight">Who</span> We Are</h3>
-										<p class="subtitle highlight"><strong>We create innovative, accessible geo-intelligence to drive better decision-making.</strong></p>
-										<p>We are a Ugandan/Irish company. We believe in simplicity. We believe in creating impact. We believe in constant improvement and evolution. We believe in ourWe know you work hard. We do too and ou team. We believe in Open
-											Source.
-										</p>
-										<p>Our goal is to equip you with the information you need to make better decisions.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
-	<section id="services">
+	<section id="blog">
 		<div class="view">
-			<div class="content colors-e">
+			<div class="content colors-h">
 				<div class="container">
-					<h2>Products</h2>
-					<p class="header-details"><span class="highlight">We Are Here</span> For You</p>
+					<h2>Blog</h2>
+					<p class="header-details"><span class="highlight">We Are</span> Something</p>
 					<p class="lead">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
 						ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 					<div class="row">
 						<div class="col-md-3 top-line">
-							<h4>Agriculture<br />Intelligence</h4>
-							<p class="highlight">Using satellite generated data, Geo Gecko has created a portal, "ag int" that offers information to farmers and
-								other stake holders on crop health and soil moisture at district level and farm level. The information is relevant for both commercial and
-								small holder farms.
+							<h4 style="color:#ff7100;">UG-EU <br />IMP-EXP</h4>
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">In 2017/2018, the European Union was the second biggest destination for Uganda's exports with a
+								market share of 20%. Exports from Uganda to the EU grew by 12 % year-on-year to a total value
+								of USD 567 million.
+								#DidYouKnowEUandUganda - All products of Ugandan origin - except for arms - can enter the EU market duty free, quota free!
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="products.html">Learn More</a>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
 						</div>
 						<div class="col-md-3 top-line">
-							<h4>Data Insight<br />Portal</h4>
-							<p class="highlight">Geo Gecko worked with the Ugandan Bureau of Statistics to process census data and make it available to the public in a searchable and easily digestible
-								format on district level, enter 'DIP Uganda!' We have the ability to expand this portal with
-								further data, even incorporating client's own data, turning the portal into a prime tool to plan commercial and development activities down to sub-county level.
+							<h4 style="color:#ff7100;">KAMPALA <br />URBAN AGRICULTURE</h4>
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Geo Gecko was recently contracted by the Kampala Capital City Authority to document the status and
+								potential of leafy veg and mushroom value chains in Kampala. It was a nice combination of data collection on the ground, via satellite and
+								pre-existing data.
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="products.html">Learn More</a>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
 						</div>
 						<div class="col-md-3 top-line">
-							<h4>UNICEF,<br />Social Protection Portal</h4>
-							<p class="highlight">Geo Gecko worked with Unicef to create a portal and maps that provide insight into the existing
-								social protection infrastructure in Kampala. We also created a 4W map (Who does what, where and when) for the social protection sector in Kampala.
+							<h4 style="color:#ff7100;">WHO WHAT <br />WHERE CASH</h4>
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Who is doing what and where are they doing it? Cash working group, Uganda.
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="products.html">Learn More</a>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
 						</div>
 						<div class="col-md-3 top-line">
-							<h4>KCCA,<br />Urban Agriculture value chain analysis portal</h4>
-							<p class="highlight">KCCA contracted Geo Gecko to carry out a Value Chain Analysis and Mapping focusing on mushrooms and
-								leafy vegetables within Kampala city. A protal, urbanAgValueChain, along with a report were developed to explain the findings of the analysis.
+							<h4 style="color:#ff7100;">Fin Access<br /> per Pop</h4>
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Take a look at what populations have access to what bank.
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="products.html">Learn More</a>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
 						</div>
 					</div>
 				</div>
@@ -462,26 +491,27 @@
 		</div>
 		<section id="testimonials">
 			<div class="view">
-				<div class="content colors-h">
+				<div class="content colors-e">
 					<div class="container">
-						<h2>Our <span class="highlight">Testimonials</span></h2>
+						<h2>Our <span class="highlight"> Clients</span></h2>
 						<p class="header-details"><span class="highlight">We Make</span> Our Customers Happy</p>
 						<div class="process">
 							<div class="row process-row">
 								<div class="col-md-3 process-step">
-									<div class="process-box">
-										<img src="images/Olam.png" style="position:relative;left:-0.5em;width:4.5em;" />
+									<div class="process-box" style="width: 254px;">
+										<img src="images/Olam.png" style="position:relative;left:-0.5em;width:5.5em;" />
 									</div>
 									<p class="title">Olam</p>
-									<p class="text-center">Geo Gecko are doing some real exciting work with machine learning and satellite imagery which helps us remotely monitor our crops in a standardized way.
+									<p class="text-center" style="text-align: justify;">Geo Gecko are doing some real exciting work with machine learning and satellite imagery which helps us remotely monitor our crops in a standardized way.
 									</p>
 								</div>
 								<div class="col-md-3 process-step">
 									<div class="process-box">
-										<!-- <img src="" style="position:relative;left:-0.5em;width:4.5em;" /> -->
+										<img src="images/dfid_logo.jpg" style="position:relative;left:-0.5em;width:4.5em;" />
 									</div>
 									<p class="title">DfID</p>
-									<p class="text-center">Geo Gecko was contracted to provide technical support to government agencies surveying 50,956 education institutions in Uganda.They did this by working hand-in-hand with government partners, trouble-shooting
+									<p class="text-center" style="text-align: justify;">Geo Gecko was contracted to provide technical support to government agencies surveying 50,956 education institutions in Uganda.They did this by working hand-in-hand with government
+										partners, trouble-shooting
 										stumbling blocks and providing technical insight that maintained the valuable relationship with an important partner and yielded a dataset that will act as a foundation for educational programming for years to come.
 									</p>
 								</div>
@@ -490,16 +520,17 @@
 										<img src="images/ucbc.png" style="position:relative;left:-0.3em;width:4.5em;bottom:0.3em" />
 									</div>
 									<p class="title">Université Chrétienne Bilingue du Congo</p>
-									<p class="text-center">Their work across the globe inspired (us)… and made what is a very complex subject in a tangible real tool…I thoroughly enjoyed working with their team. Geo Gecko… provide to be highly knowledgeable. I can
+									<p class="text-center" style="text-align: justify;">Their work across the globe inspired (us)… and made what is a very complex subject in a tangible real tool…I thoroughly enjoyed working with their team. Geo Gecko… provide to be
+										highly knowledgeable. I can
 										safely recommend Geo Gecko as a capable, effective and trustworthy company.
 									</p>
 								</div>
 								<div class="col-md-3 process-step">
 									<div class="process-box">
-										<!-- <img src="" style="position:relative;left:-0.5em;width:4.5em;" /> -->
+										<img src="images/gggi.png" style="position:relative;left:-0.5em;width:4.5em;" />
 									</div>
 									<p class="title">Global Green Growth Initiative</p>
-									<p class="text-center">
+									<p class="text-center" style="text-align: justify;">
 										Geo-gecko provided invaluable products in a very informative and professional manner. It was particularly very helpful that they had
 										undertaken several similar assignments in other sectors, like the financial sector, so it was very beneficial to have that pertinent
 										knowledge incorporated into our analysis.
@@ -508,188 +539,177 @@
 							</div>
 						</div>
 					</div>
-					<a class="button background-lite-b border-heading-b heading-b" href="testimonials.html" style="left:50%;">Learn More</a>
 				</div>
 			</div>
-			<section id="contact">
-				<div class="view">
-					<img alt class="bg" src="images/Background.png" />
-					<img alt class="bg" src="images/Background.png" />
-					<img alt class="bg" src="images/Background.png" />
-					<div class="content full-size colors-e">
-						<div class="container">
-							<h2>Contact</h2>
-							<p class="header-details">Keep In Touch</p>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="text-right scroll-in-animation" data-animation="fadeInLeft">
-										<p class="big-font uppercase">
-											Tel: <strong class="highlight">+256 787 428 146</strong>
-										</p>
-										<p class="big-font uppercase">
-											Plot 8 Kanjokya Street,
-											<br /> Kamwokya, Kampala, Uganda
-										</p>
-										<p class="big-font">
-											<b>
-												<a href="mailto:info@geogecko.com?" target="_top">info@geogecko.com</a><br />
-												<a href="http://www.geogecko.com">www.geogecko.com</a>
-											</b>
-										</p>
-										<p class="big-font">
+		</section>
+		<section id="contact">
+			<div class="view">
+				<img alt class="bg" src="images/Background.png" />
+				<img alt class="bg" src="images/Background.png" />
+				<img alt class="bg" src="images/Background.png" />
+				<div class="content full-size colors-e">
+					<div class="container">
+						<h2>Contact</h2>
+						<p class="header-details">Keep In Touch</p>
+						<div class="row">
+							<div class="col-md-6">
+								<!-- <p class="big-font">
 											<a target="_blank" href="https://twitter.com/geogecko?lang=en"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x heading"></i><i class="fa fa-twitter fa-stack-1x text-background"></i></span></a>
 											<a target="_blank" href="https://www.facebook.com/GeoGeckoUganda/"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x heading"></i><i class="fa fa-facebook fa-stack-1x text-background"></i></span></a>
 											<a target="_blank" href="https://www.instagram.com/geogecko1/"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x heading"></i><i class="fa fa-instagram fa-stack-1x text-background"></i></span></a>
 											<a target="_blank" href="https://github.com/Geo-Gecko"><span class="fa-stack"><i class="fa fa-circle fa-stack-2x heading"></i><i class="fa fa-github fa-stack-1x text-background"></i></span></a>
-										</p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="text-left scroll-in-animation" data-animation="fadeInRight">
-										<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="contact.php" method="post" novalidate="novalidate">
-											<div class="row">
-												<div class="col-md-6 control-group">
-													<div class="alt-placeholder">Name</div>
-													<input type="text" name="your-name" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
-													<div class="help-block"></div>
-												</div>
-												<div class="col-md-6 control-group">
-													<div class="alt-placeholder">Email</div>
-													<input type="email" name="your-email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
-													<div class="help-block"></div>
-												</div>
-												<div class="col-md-12 control-group">
-													<div class="alt-placeholder">Message</div>
-													<textarea name="your-message" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
-													<div class="help-block"></div>
-												</div>
-												<div class="col-md-12 form-actions">
-													<input class="button" type="submit" value="Send">
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
+										</p> -->
 							</div>
-							<div class="text-center">
-								<a class="map-open button background-lite-b border-heading-b heading-b" data-map-overlay=".map-overlay" href="#">Locate Us on Map</a>
+						</div>
+						<div class="col-md-6">
+							<div class="text-left scroll-in-animation" data-animation="fadeInRight">
+								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="contact.php" method="post" novalidate="novalidate">
+									<div class="row contact">
+										<div class="col-md-6 control-group">
+											<div class="alt-placeholder">Name</div>
+											<input type="text" name="your-name" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
+											<div class="help-block"></div>
+										</div>
+										<div class="col-md-6 control-group">
+											<div class="alt-placeholder">Email</div>
+											<input type="email" name="your-email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
+											<div class="help-block"></div>
+										</div>
+										<div class="col-md-12 control-group">
+											<div class="alt-placeholder">Message</div>
+											<textarea name="your-message" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
+											<div class="help-block"></div>
+										</div>
+										<div class="col-md-12 form-actions">
+											<input class="button" type="submit" value="Send">
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- END: Page content -->
-			<!-- BEGIN: Footer -->
-			<footer class="colors-g page-transition non-preloading">
-				<div class="container scroll-in-animation" data-animation="fadeInDown">
-					<div class="row">
-						<div class="col-md-3">
-							<a class="" href="index.html"><img src="images/GG_Logo2" alt="" style="position:relative;width:10em;left:-1em;"></a>
-							<p class="social-links">
-								<a href="https://www.facebook.com/GeoGeckoUganda/" target="_blank"><i class="fa fa-facebook"></i></a>
-								<a href="https://twitter.com/geogecko?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
-								<a href="https://www.youtube.com/watch?v=MygzUepubVU" target="_blank"><i class="fa fa-youtube"></i></a>
-								<a href="https://www.linkedin.com/company/geo-gecko" target="_blank"><i class="fa fa-linkedin"></i></a>
-								<a href="https://www.instagram.com/geogecko1/" target="_blank"><i class="fa fa-instagram"></i></a>
-								<a href="https://github.com/Geo-Gecko" target="_blank"><i class="fa fa-github"></i></a>
-							</p>
-						</div>
-						<div class="col-md-3">
-							<h5>Additional Links</h5>
-							<ul class="simple">
-								<li><a href="blog.html">Blog</a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<h5>Recent Posts</h5>
-							<ul class="simple">
-								<li><a href="blog-single-1.html">Post with Featured Image</a></li>
-								<li><a href="blog-single-2.html">And Post with Slider</a></li>
-								<li><a href="blog-single-3.html">Post with Vimeo Video</a></li>
-								<li><a href="blog-single-4.html">Another Post with Image</a></li>
-								<li><a href="blog.html">More...</a></li>
-							</ul>
-						</div>
+					<div class="text-center">
+						<a class="map-open button background-lite-b border-heading-b heading-b" data-map-overlay=".map-overlay" href="#">Locate Us on Map</a>
 					</div>
 				</div>
-			</footer>
-			<!-- END: Footer -->
-			<script>
-				if (typeof(atob) == "undefined") {
-					document.write('<script src="lib/stringencoders-v3.10.3/javascript/base64.js"><\/script>');
-					var atob = function(x) {
-						return base64.decode(x);
-					}
+			</div>
+			</div>
+		</section>
+		<!-- END: Page content -->
+		<!-- BEGIN: Footer -->
+		<footer class="colors-g page-transition non-preloading">
+			<div class="container scroll-in-animation" data-animation="fadeInDown">
+				<div class="row" style="position:relative;left:22em;padding-bottom:2em;">
+					<div class="col-md-3">
+						<h5>Contact</h5>
+						<ul class="simple">
+							Plot 8 Kanjokya Street,<br />Kamwokya, <br />Kampala, Uganda<br /><a href="mailto:info@geogecko.com?" target="_top">info@geogecko.com</a>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h5>Site</h5>
+						<ul class="simple">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">What We Do</a></li>
+							<li><a href="#team">Who We Are</a></li>
+							<li><a href="#services">Blog</a></li>
+							<li><a href="#testimonials">Testimonials</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END: Footer -->
+		<script>
+			if (typeof(atob) == "undefined") {
+				document.write('<script src="lib/stringencoders-v3.10.3/javascript/base64.js"><\/script>');
+				var atob = function(x) {
+					return base64.decode(x);
 				}
-			</script>
-			<script src="bower_components/less.js/dist/less.min.js"></script>
-			<script src="bower_components/jquery/dist/jquery.min.js"></script>
-			<script src="lib/tween/tween.min.js"></script>
-			<script src="bootstrap/dist/js/bootstrap.min.js"></script>
-			<script src="bower_components/modernizr/modernizr.js"></script>
-			<!-- <script src="lib/SmoothScroll-1.2.1/SmoothScroll.js"></script> -->
-			<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
-			<!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
-			<script src="bower_components/jqBootstrapValidation/dist/jqBootstrapValidation-1.3.7.min.js"></script>
-			<script src="bower_components/minicolors/jquery.minicolors.min.js"></script>
-			<script src="bower_components/slick.js/slick/slick.min.js"></script>
-			<script src="bower_components/shufflejs/dist/jquery.shuffle.min.js"></script>
-			<script src="bower_components/textillate/assets/jquery.lettering.js"></script>
-			<script src="bower_components/textillate/assets/jquery.fittext.js"></script>
-			<script src="bower_components/textillate/jquery.textillate.js"></script>
-			<script src="lib/prism/prism.js"></script> -->
-			<script>
-				(function() {
-					var disableMobileAnimations = true;
-					var isWin = navigator.appVersion.indexOf("Win") !== -1;
-					if (isWin) $('html').addClass('win');
-					var ua = navigator.userAgent.toLowerCase();
-					var isChrome = ua.indexOf('chrome') > -1;
-					if (isChrome) $('html').addClass('chrome');
-					var isAndroidBrowser4_3minus = ((ua.indexOf('mozilla/5.0') > -1 && ua.indexOf('android ') > -1 && ua.indexOf('applewebkit') > -1) && !(ua.indexOf('chrome') > -1));
-					if (isAndroidBrowser4_3minus) $('html').addClass('android-browser-4_3minus');
-					var isSafari = !isChrome && ua.indexOf('safari') !== -1;
-					if (isSafari) $('html').addClass('safari');
-					var isMobile = Modernizr.touch;
-					if (isMobile) {
-						$('html').addClass('mobile');
-						if (disableMobileAnimations) $('html').addClass('poor-browser');
-					} else {
-						$('html').addClass('non-mobile');
-					}
-					if (isWin && isSafari) {
-						$('html').addClass('flat-animation');
-					}
-				})();
-			</script>
-			<script src="scripts/script-bundle.js"></script>
-			<script>
-				if (Function('/*@cc_on return document.documentMode===9@*/')()) {
-					$('html').addClass('ie9');
+			}
+		</script>
+		<script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+		<script src="bower_components/less.js/dist/less.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="lib/tween/tween.min.js"></script>
+		<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/modernizr/modernizr.js"></script>
+		<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="bower_components/jqBootstrapValidation/dist/jqBootstrapValidation-1.3.7.min.js"></script>
+		<script src="bower_components/minicolors/jquery.minicolors.min.js"></script>
+		<script src="bower_components/slick.js/slick/slick.min.js"></script>
+		<script src="bower_components/shufflejs/dist/jquery.shuffle.min.js"></script>
+		<script src="bower_components/textillate/assets/jquery.lettering.js"></script>
+		<script src="bower_components/textillate/assets/jquery.fittext.js"></script>
+		<script src="bower_components/textillate/jquery.textillate.js"></script>
+		<script src="lib/prism/prism.js"></script>
+
+		<script>
+			(function() {
+				var disableMobileAnimations = true;
+				var isWin = navigator.appVersion.indexOf("Win") !== -1;
+				if (isWin) $('html').addClass('win');
+				var ua = navigator.userAgent.toLowerCase();
+				var isChrome = ua.indexOf('chrome') > -1;
+				if (isChrome) $('html').addClass('chrome');
+				var isAndroidBrowser4_3minus = ((ua.indexOf('mozilla/5.0') > -1 && ua.indexOf('android ') > -1 && ua.indexOf('applewebkit') > -1) && !(ua.indexOf('chrome') > -1));
+				if (isAndroidBrowser4_3minus) $('html').addClass('android-browser-4_3minus');
+				var isSafari = !isChrome && ua.indexOf('safari') !== -1;
+				if (isSafari) $('html').addClass('safari');
+				var isMobile = Modernizr.touch;
+				if (isMobile) {
+					$('html').addClass('mobile');
+					if (disableMobileAnimations) $('html').addClass('poor-browser');
+				} else {
+					$('html').addClass('non-mobile');
 				}
-				if (Function('/*@cc_on return document.documentMode===10@*/')()) {
-					$('html').addClass('ie10');
+				if (isWin && isSafari) {
+					$('html').addClass('flat-animation');
 				}
-				if (!!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-					$('html').addClass('ie11');
-				}
-			</script>
-			<script>
-				var mymap = L.map('mapid').setView([0.3402207, 32.5881917], 19);
-				var HikeBike_HikeBike = L.tileLayer('https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
-					maxZoom: 18,
-					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-				}).addTo(mymap);
-				var greenIcon = L.icon({
-					iconUrl: 'images/logo.png',
-					iconSize: [40, 60],
-					iconAnchor: [22, 94],
-					popupAnchor: [-3, -76]
-				});
-				L.marker([0.340241, 32.589251], {
-					icon: greenIcon
-				}).addTo(mymap);
-			</script>
+			})();
+		</script>
+		<script src="scripts/script-bundle.js"></script>
+		<script>
+			if (Function('/*@cc_on return document.documentMode===9@*/')()) {
+				$('html').addClass('ie9');
+			}
+			if (Function('/*@cc_on return document.documentMode===10@*/')()) {
+				$('html').addClass('ie10');
+			}
+			if (!!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+				$('html').addClass('ie11');
+			}
+		</script>
+		<script>
+			L.mapbox.accessToken = 'pk.eyJ1IjoibHlubm5ha2lnYW5kYSIsImEiOiJjazd1NTJsdzAwdmwyM2xwZzRycXN6bHJvIn0.EhrvHON1WNWML95Jh-HrvQ';
+			var map = L.mapbox.map('map')
+				.setView([0.3402207, 32.5895917], 19)
+				.addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+			L.marker([0.340241, 32.589251], {
+				icon: L.mapbox.marker.icon({
+					'marker-size': 'large',
+					'marker-symbol': 'marker',
+					'marker-color': '#ff7100'
+				})
+			}).addTo(map);
+			// var map = L.map('map').setView([0.3402207, 32.5881917], 19);
+			// var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			// 	maxZoom: 19,
+			// 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			// }).addTo(map);
+			// var greenIcon = L.icon({
+			// 	iconUrl: 'images/logo.png',
+			// 	iconSize: [40, 60],
+			// 	iconAnchor: [22, 94],
+			// 	popupAnchor: [-3, -76]
+			// });
+			// L.marker([0.340241, 32.589251], {
+			// 	icon: greenIcon
+			// }).addTo(map);
+			// console.log(map)
+		</script>
 </body>
 
 </html>
