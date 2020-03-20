@@ -12,21 +12,26 @@ const formEvent = form.addEventListener('submit', event => {
 
    const user = { username, email, message };
 
+
    createUser(user);
 });
 
 
+
 const createUser = (user) => {
-    axios.post(' http://34.90.92.86:8887/users/')
-    .then(response => {
-        const addedUser = response.data;
-        console.log(`POST: user is added`, addedUser);
-
-    })
-
-    .catch(error => console.error(eror));
+    console.log(user);
+axios({
+    method: 'post',
+    url: ' http://34.90.92.86:8887/users/',
+    data: {
+      username: `${username}`,
+      email: `${email}`,
+      message: `${message}`
+    }
+  });
 }
 
+createUser();
 // //getting the articles from an endpoint and passing it into the DOM
 
 // const createList = (articles) => {
