@@ -1,14 +1,14 @@
 //Add an event listener for the form submission to create a new user
 
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 
 
 const formEvent = form.addEventListener('submit', event => {
    event.preventDefault(); 
-
-   const username = document.querySelector('#username').Value;
-   const email = document.querySelector('#email').Value;
-   const message = document.querySelector('#message').Value;
+   const username = document.querySelector("#username").value;
+   console.log("username: " + username);
+   const email = document.querySelector("#email").value;
+   const message = document.querySelector("#message").value;
 
    const user = { username, email, message };
 
@@ -20,15 +20,17 @@ const formEvent = form.addEventListener('submit', event => {
 
 const createUser = (user) => {
     console.log(user);
+    let postObject = {...user}
 axios({
     method: 'post',
     url: ' http://34.90.92.86:8887/users/',
     data: {
-      username: `${username}`,
-      email: `${email}`,
-      message: `${message}`
+      "username": `${postObject.username}`,
+      "email": `${postObject.email}`,
+      "message": `${postObject.message}`
     }
   });
+
 }
 
 createUser();
