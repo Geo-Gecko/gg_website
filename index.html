@@ -29,6 +29,37 @@
 				left: 49%;
 			}
 		}
+
+		@media (min-width:992px) {
+			.about_row {
+				width: 45.333333%;
+			}
+		}
+
+		@media (max-width:991px) {
+			.about_row {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
+
+		@media (min-width:992px) {
+			.contact_footer {
+				position: relative;
+				left: 28em;
+				padding-bottom: 2em;
+			}
+		}
+
+		.head {
+			margin-left: -29px;
+		}
+
+		@media (max-width:991px) {
+			.who_we_are {
+				width: 28em;
+			}
+		}
 	</style>
 </head>
 
@@ -46,7 +77,7 @@
 	</div>
 	<!-- BEGIN: Top menu -->
 	<div class="page-border right colors-e background-solid"></div>
-	<nav class="navbar navbar-default navbar-fixed-top page-transition colors-e background-solid" role="navigation" id="top-nav">
+	<nav class="navbar navbar-default page-transition colors-e background-solid" role="navigation" id="top-nav">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.html"><img src="images/GG_Logo2.png" alt=""></a>
@@ -83,14 +114,7 @@
 			<a class="cross" href="#"></a>
 		</div>
 		<div class="overlay-view">
-			<!-- <h1>Hello Lynn's Map</h1>
-			<div class="map-view"> -->
 			<div id="map" style="height:800px;"></div>
-			<!-- </div> -->
-			<!-- <div class="map-canvas" data-latitude="42.487606" data-longitude="-71.115661" data-zoom="14">
-				<div class="map-marker" data-latitude="42.487606" data-longitude="-71.115661" data-text="Our awesome location"></div>
-				<div class="map-marker" data-latitude="42.485100" data-longitude="-71.113256" data-text="Our sales office"></div>
-			</div> -->
 		</div>
 	</div>
 
@@ -115,7 +139,7 @@
 			<img alt class="bg" src="images/Background.png" /><img alt class="bg" src="images/Background.png" />
 			<div class="content home-alice full-size colors-a background-transparent">
 				<div class="container-fluid">
-					<div class="row">
+					<div class="row head">
 						<div class="col-md-5 col-md-offset-1">
 							<h1 class="heading text-right" style="text-align: left; color: #ebebeb;">GEO-INTELLIGENCE FOR DECISION MAKING</h1>
 						</div>
@@ -125,20 +149,18 @@
 		</div>
 	</section>
 	<section id="about">
-		<div class="view">
-		</div>
-		<div class="view">
+		<div class="">
 			<div class="content colors-e">
 				<div class="container">
 					<h2>About</h2>
-					<p class="header-details"><span class="highlight">We Create</span> Awesome Stuff</p>
-					<p class="lead">We monitor <span class="highlight">how the earth changes over time.</span>
+					<p class="header-details"><span class="highlight">We Create</span> Amazing Stuff</p>
+					<p style="text-align: justify;" class="lead">We monitor <span class="highlight">how the earth changes over time.</span>
 						We quantify the change that is relevant to your work and provide you with the analysis you need to make
 						an informed decision. We do this by tapping into satellites with almost daily global coverage, using powerful cloud computing tools and developing machine
 						learning algorithms to extract the relevant data. This method is scalable, affordable and provides a historical perspective.
 					</p>
-					<div class="row" style="margin-left: 5em;">
-						<div class="col-md-4" style="width: 45.333333%;">
+					<div class="row" style="margin-left: 4em;">
+						<div class="col-md-4 about_row">
 							<div class="col-icon">
 								<i class="li_cloud"></i>
 							</div>
@@ -149,7 +171,7 @@
 									information twice a month.</p>
 							</div>
 						</div>
-						<div class="col-md-4" style="width: 45.333333%;">
+						<div class="col-md-4 about_row">
 							<div class="col-icon">
 								<i class="li_location"></i>
 							</div>
@@ -161,7 +183,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-md-4" style="width: 45.333333%;">
+						<div class="col-md-4 about_row">
 							<div class="col-icon">
 								<i class="li_eye"></i>
 							</div>
@@ -174,13 +196,13 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-md-4" style="width: 45.333333%;">
+						<div class="col-md-4 about_row">
 							<div class="col-icon">
 								<i class="li_world"></i>
 							</div>
 							<div class="col-content">
 								<h4>Tailored <span class="highlight">Geospatial Analysis</span></h4>
-								<p style="text-align: justify;">We also tailor our analysis specific to your needs.For example, monitoring of urban environments for buildings/construction, tree cover,
+								<p style="text-align: justify;">We also tailor our analysis specific to your needs. For example, monitoring of urban environments for buildings/construction, tree cover,
 									green space etc. to aid authorities in urban planning and service delivery, tools to auto-update QGIS print-ready maps at the click of a button,
 									auto-updating web maps powered by Google Sheets that visualise data on ground, mobile data collection tools and online/offline GIS systems,
 									facilitation of aerial LiDAR and underwater bathymetric surveys in extremely harsh environments.
@@ -193,26 +215,27 @@
 		</div>
 	</section>
 	<section id="team">
-		<div class="view" id="who-we-are">
+		<div class="" id="who-we-are">
 			<div class="content colors-h">
+				<div class="view">
 				<h2>Who We Are</h2>
-				<p class="header-details"><span class="highlight">We Have</span> Awesome People</p>
+				<p class="header-details"><span class="highlight">We Have</span> Great People</p>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 stretch-height pane">
-							<div class="view fluid-height">
-								<img src="images/Group_picture.png" />
+							<div class="fluid-height">
+								<img class="who_we_are" src="images/Group_picture2.jpg" />
 							</div>
 						</div>
 						<div class="col-md-6  stretch-height pane">
-							<div class="view fluid-height">
+							<div class="fluid-height">
 								<div class="content incut">
 									<div class="position-middle-center">
-										<p class="subtitle highlight"><strong>We create innovative, accessible geo-intelligence to drive better decision-making.</strong></p>
-										<p>We are a Ugandan/Irish company. We believe in simplicity. We believe in creating impact. We believe in constant improvement and evolution.
+										<p style="text-align: justify;" class="subtitle highlight"><strong>We create innovative, accessible geo-intelligence to drive better decision-making.</strong></p>
+										<p style="text-align: justify;">We are a Ugandan/Irish company. We believe in simplicity. We believe in creating impact. We believe in constant improvement and evolution.
 											We use open source software where we can and contribute to its development.
 										</p>
-										<p>Our goal is to equip you with the information you need to make
+										<p style="text-align: justify;">Our goal is to equip you with the information you need to make
 											better decisions.</p>
 									</div>
 								</div>
@@ -222,12 +245,13 @@
 				</div>
 			</div>
 		</div>
+		</div>
 		<div class="view">
 			<div class="content colors-e">
 				<div class="container">
 					<h2>Team</h2>
 					<p class="header-details"><span class="highlight">Who </span>We Are</p>
-					<p class="lead">Our success depends on the <strong class="highlight">strength of our team.</strong>We come from a variety of backgrounds, such as classic Geographical Information Systems,
+					<p class="lead" style="text-align: justify;">Our success depends on the <strong class="highlight">strength of our team.</strong>We come from a variety of backgrounds, such as classic Geographical Information Systems,
 						software development, urban planning, physics and commercial and humanitarian ops. This makes our problem-solving brainstorms intense, interesting
 						and productive.<br />
 						Drop by our office and meet the team.</p>
@@ -235,7 +259,7 @@
 						<div class="post-image">
 							<div class="slider">
 								<div class="row" style="display: flex;">
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Sharon" src="images/sharon.jpg" title="Sharon" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -255,7 +279,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Bernard" src="images/bernard.jpg" title="Bernard" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -275,7 +299,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Desire" src="images/desire.jpg" title="Desire" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -297,7 +321,9 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+								</div>
+								<div class="row" style="display: flex;">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Evet" src="images/evet.jpg" title="Evet" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -317,7 +343,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Lydia" src="images/lydia.jpg" title="Lydia" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -337,9 +363,29 @@
 											</p>
 										</div>
 									</div>
+									<div class="col-md-4 col-sm-6  col-xs-6">
+										<div class="hover-overlay">
+											<img alt="Baron" src="images/baron.png" title="Baron" class="fluid-width">
+											<div class="overlay background-90-b">
+												<div>
+													<p class="text-center heading-b">
+														Aloha, Baron here. Problem enthusiast/solver. Currently working with software to enthuse/solve said problems. Give me your data and I'll help you visualize it.
+													</p>
+													<div class="separator-small"></div>
+												</div>
+											</div>
+										</div>
+										<div class="caption">
+											<p>
+												<span class="title">Baron</span>
+												<br />
+												<span class="highlight">Associate Developer</span>
+											</p>
+										</div>
+									</div>
 								</div>
 								<div class="row" style="display: flex;">
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Lynn" src="images/lynn.jpg" title="Lynn" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -359,33 +405,14 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
-											<img alt="Baron" src="images/placeholders/380x573-2.jpg" title="Baron" class="fluid-width">
+											<img alt="Liberty" src="images/liberty.jpg" title="Liberty" class="fluid-width">
 											<div class="overlay background-90-b">
 												<div>
 													<p class="text-center heading-b">
-														vjhhhhjhhhhsjbsmn,sjlijskmn bsdbhskuhijjml.example
-													</p>
-													<div class="separator-small"></div>
-												</div>
-											</div>
-										</div>
-										<div class="caption">
-											<p>
-												<span class="title">Baron</span>
-												<br />
-												<span class="highlight">Associate Developer</span>
-											</p>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
-										<div class="hover-overlay">
-											<img alt="person" src="images/placeholders/380x573-2.jpg" title="person" class="fluid-width">
-											<div class="overlay background-90-b">
-												<div>
-													<p class="text-center heading-b">
-														vjhhhhjhhhhsjbsmn,sjlijskmn bsdbhskuhijjml.example
+														Hey, I am Liberty, the office manager, I ensure the smooth running of the office and make it easy for everyone to enjoy the work atmosphere.
+														I carry with me the source of Love✌🏽
 													</p>
 													<div class="separator-small"></div>
 												</div>
@@ -399,7 +426,7 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
 											<img alt="Ingrid" src="images/ingrid.jpg" title="Ingrid" class="fluid-width">
 											<div class="overlay background-90-b">
@@ -419,13 +446,15 @@
 											</p>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6  col-xs-6">
+								</div>
+								<div class="row" style="display: flex;">
+									<div class="col-md-4 col-sm-6  col-xs-6">
 										<div class="hover-overlay">
-											<img alt="Paul" src="images/placeholders/380x573-2.jpg" title="Paul" class="fluid-width">
+											<img alt="Paul" src="images/paul.jpg" title="Paul" class="fluid-width">
 											<div class="overlay background-90-b">
 												<div>
 													<p class="text-center heading-b">
-														vjhhhhjhhhhsjbsmn,sjlijskmn bsdbhskuhijjml.example
+														Hey, I am Paul. I love to program and transform data into cool things. Writing deep code till my eyes bleed is my heart and soul.
 													</p>
 													<div class="separator-small"></div>
 												</div>
@@ -448,13 +477,12 @@
 		</div>
 	</section>
 	<section id="blog">
-		<div class="view">
+		<div class="">
 			<div class="content colors-h">
 				<div class="container">
 					<h2>Blog</h2>
-					<p class="header-details"><span class="highlight">We Are</span> Something</p>
-					<p class="lead">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-						ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="header-details"><span class="highlight">We Write</span> As Well</p>
+					<p class="lead">Here you can find the latest on what we're working on and what we find interesting.</p>
 					<div class="row">
 						<div class="col-md-3 top-line">
 							<h4 style="color:#ff7100;">UG-EU <br />IMP-EXP</h4>
@@ -490,14 +518,14 @@
 			</div>
 		</div>
 		<section id="testimonials">
-			<div class="view">
+			<div class="">
 				<div class="content colors-e">
 					<div class="container">
 						<h2>Our <span class="highlight"> Clients</span></h2>
-						<p class="header-details"><span class="highlight">We Make</span> Our Customers Happy</p>
+						<p class="header-details"><span class="highlight">We Work</span> With You</p>
 						<div class="process">
 							<div class="row process-row">
-								<div class="col-md-3 process-step">
+								<div class="col-md-4 process-step">
 									<div class="process-box" style="width: 254px;">
 										<img src="images/Olam.png" style="position:relative;left:-0.5em;width:5.5em;" />
 									</div>
@@ -505,35 +533,24 @@
 									<p class="text-center" style="text-align: justify;">Geo Gecko are doing some real exciting work with machine learning and satellite imagery which helps us remotely monitor our crops in a standardized way.
 									</p>
 								</div>
-								<div class="col-md-3 process-step">
+								<div class="col-md-4 process-step">
 									<div class="process-box">
-										<img src="images/dfid_logo.jpg" style="position:relative;left:-0.5em;width:4.5em;" />
+										<img src="images/iita.png" style="position:relative;left:-0.15em;width:5.5em;" />
 									</div>
-									<p class="title">DfID</p>
+									<p class="title">International Institute of Tropical Agriculture(IITA)</p>
 									<p class="text-center" style="text-align: justify;">Geo Gecko was contracted to provide technical support to government agencies surveying 50,956 education institutions in Uganda.They did this by working hand-in-hand with government
 										partners, trouble-shooting
 										stumbling blocks and providing technical insight that maintained the valuable relationship with an important partner and yielded a dataset that will act as a foundation for educational programming for years to come.
 									</p>
 								</div>
-								<div class="col-md-3 process-step">
+								<div class="col-md-4 process-step">
 									<div class="process-box">
-										<img src="images/ucbc.png" style="position:relative;left:-0.3em;width:4.5em;bottom:0.3em" />
+										<img src="images/opp.png" style="position:relative;width:5.5em;bottom:0.3em" />
 									</div>
-									<p class="title">Université Chrétienne Bilingue du Congo</p>
+									<p class="title">Opportunity International</p>
 									<p class="text-center" style="text-align: justify;">Their work across the globe inspired (us)… and made what is a very complex subject in a tangible real tool…I thoroughly enjoyed working with their team. Geo Gecko… provide to be
 										highly knowledgeable. I can
 										safely recommend Geo Gecko as a capable, effective and trustworthy company.
-									</p>
-								</div>
-								<div class="col-md-3 process-step">
-									<div class="process-box">
-										<img src="images/gggi.png" style="position:relative;left:-0.5em;width:4.5em;" />
-									</div>
-									<p class="title">Global Green Growth Initiative</p>
-									<p class="text-center" style="text-align: justify;">
-										Geo-gecko provided invaluable products in a very informative and professional manner. It was particularly very helpful that they had
-										undertaken several similar assignments in other sectors, like the financial sector, so it was very beneficial to have that pertinent
-										knowledge incorporated into our analysis.
 									</p>
 								</div>
 							</div>
@@ -593,13 +610,12 @@
 					</div>
 				</div>
 			</div>
-			</div>
 		</section>
 		<!-- END: Page content -->
 		<!-- BEGIN: Footer -->
 		<footer class="colors-g page-transition non-preloading">
 			<div class="container scroll-in-animation" data-animation="fadeInDown">
-				<div class="row" style="position:relative;left:22em;padding-bottom:2em;">
+				<div class="row contact_footer">
 					<div class="col-md-3">
 						<h5>Contact</h5>
 						<ul class="simple">
@@ -687,28 +703,16 @@
 			var map = L.mapbox.map('map')
 				.setView([0.3402207, 32.5895917], 19)
 				.addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+			var myIcon = L.icon({
+				iconUrl: 'images/logo.png',
+				iconSize: [52, 68],
+				iconAnchor: [33, 81],
+				popupAnchor: [-3, -76],
+			});
+
 			L.marker([0.340241, 32.589251], {
-				icon: L.mapbox.marker.icon({
-					'marker-size': 'large',
-					'marker-symbol': 'marker',
-					'marker-color': '#ff7100'
-				})
+				icon: myIcon
 			}).addTo(map);
-			// var map = L.map('map').setView([0.3402207, 32.5881917], 19);
-			// var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			// 	maxZoom: 19,
-			// 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-			// }).addTo(map);
-			// var greenIcon = L.icon({
-			// 	iconUrl: 'images/logo.png',
-			// 	iconSize: [40, 60],
-			// 	iconAnchor: [22, 94],
-			// 	popupAnchor: [-3, -76]
-			// });
-			// L.marker([0.340241, 32.589251], {
-			// 	icon: greenIcon
-			// }).addTo(map);
-			// console.log(map)
 		</script>
 </body>
 
