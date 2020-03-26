@@ -6,7 +6,6 @@ const form = document.querySelector("form");
 const formEvent = form.addEventListener('submit', event => {
    event.preventDefault(); 
    const username = document.querySelector("#username").value;
-   console.log("username: " + username);
    const email = document.querySelector("#email").value;
    const message = document.querySelector("#message").value;
 
@@ -19,11 +18,10 @@ const formEvent = form.addEventListener('submit', event => {
 
 
 const createUser = (user) => {
-    console.log(user);
     let postObject = {...user}
 axios({
     method: 'post',
-    url: ' http://34.90.92.86:8887/users/',
+    url: ' https://gg-web-api.herokuapp.com/users/',
     data: {
       "username": `${postObject.username}`,
       "email": `${postObject.email}`,
@@ -34,32 +32,52 @@ axios({
 }
 
 createUser();
-// //getting the articles from an endpoint and passing it into the DOM
 
-// const createList = (articles) => {
-//     const li = document.createElement('li');
-//     //add articles to the 'li'
-//     li.textContent = `${articles.title}: ${articles.content}: ${articles.tag}`;
-//     return li;
+//flash message when a user post data to the endpoint 
+(function($) {
+  $.fn.flash_message = function(options) {
 
-// };
+    options = $.extend({
+      text: 'Done',
+      time: 3000,
+      how: 'before',
+      class_name: ''
+    }, options);
 
-// const appendToDOM = (articles) => {
-//     const ul = document.querySelector('');
-//     //iteratw over all articles 
-//     articles.map(articles => {
-//         ul.appendChild(createList(articles));
-//     });
-// };
+    return $(this).each(function() {
+      if ($(this).parent().find('.flash_message').get(0))
+        return;
+
+      var message = $('<span />', {
+        'class': 'flash_message ' + options.class_name,
+        text: options.text
+      }).hide().fadeIn('fast');
+
+      $(this)[options.how](message);
+
+      message.delay(options.time).fadeOut('normal', function() {
+        $(this).remove();
+      });
+
+    });
+  };
+})(jQuery);
+
+$('.button').click(function() {
+
+  $('#status-area').flash_message({
+    text: 'Thanks for filling out our form!, You can click on clear form button',
+    how: 'append'
+  });
+});
+
 
 //getting articles from an endpoint 
 const getArticles = () => {
-    axios.get('http://34.90.92.86:8887/articles/')
+    axios.get('https://gg-web-api.herokuapp.com/articles/')
     .then(response => {
-        const articles = response.data;
-        console.log(`GET List articles`, articles);
-        //append to DOM
-        //appendToDOM(articles);
+        const articles = response.data; 
+      
     })
 
     .catch(error => console.error(error));
@@ -67,6 +85,5 @@ const getArticles = () => {
 
 
 getArticles();
-
 
 

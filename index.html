@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="lib/linecons/style.css" />
 	<link rel="stylesheet" href="styles/style.min.css" />
 	<link rel="stylesheet" href="theme-custom.css" />
+	<link rel="stylesheet" href="custom1.css" />
 	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -561,6 +562,7 @@
 										</p> -->
 							</div>
 						</div>
+						
 						<div class="col-md-6">
 							<div class="text-left scroll-in-animation" data-animation="fadeInRight">
 								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="/bootstrap/js/Axios.js." id="myForm" method="post" novalidate="novalidate">
@@ -578,11 +580,13 @@
 										<div class="col-md-12 control-group">
 											<div class="alt-placeholder">Message</div>
 											<textarea id="message" placeholder="Message" value="message" data-validation-required-message="Please fill the required field." required></textarea>
+											<input type="reset" value="Clear form" />
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 form-actions">
-											<input class="button" type="submit" value="Send">
+											<input class="button" type="submit"  id="" value="Send">
 										</div>
+										<div id="status-area"></div>
 									</div>
 								</form>
 							</div>

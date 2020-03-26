@@ -1,0 +1,9 @@
+#status-area .flash_message {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium; 
+    padding: 3px;
+    color: black;
+   
+}
+
