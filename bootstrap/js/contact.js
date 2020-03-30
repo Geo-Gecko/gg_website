@@ -11,7 +11,6 @@ const formEvent = form.addEventListener('submit', event => {
 
    const user = { username, email, message };
 
-
    createUser(user);
 });
 
@@ -31,7 +30,7 @@ axios({
 
 }
 
-createUser();
+
 
 //flash message when a user post data to the endpoint 
 (function($) {
