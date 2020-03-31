@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="lib/linecons/style.css" />
 	<link rel="stylesheet" href="styles/style.min.css" />
 	<link rel="stylesheet" href="theme-custom.css" />
+	<link rel="stylesheet" href="custom1.css" />
 	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -561,28 +562,31 @@
 										</p> -->
 							</div>
 						</div>
+						
 						<div class="col-md-6">
 							<div class="text-left scroll-in-animation" data-animation="fadeInRight">
-								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="contact.php" method="post" novalidate="novalidate">
+								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="/bootstrap/js/contact.js." id="myForm" method="post" novalidate="novalidate">
 									<div class="row contact">
 										<div class="col-md-6 control-group">
 											<div class="alt-placeholder">Name</div>
-											<input type="text" name="your-name" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
+											<input type="text" name="username" id="username" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-6 control-group">
 											<div class="alt-placeholder">Email</div>
-											<input type="email" name="your-email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
+											<input type="email" name="email" id="email" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 control-group">
 											<div class="alt-placeholder">Message</div>
-											<textarea name="your-message" placeholder="Message" data-validation-required-message="Please fill the required field." required></textarea>
+											<textarea id="message" placeholder="Message" value="message" data-validation-required-message="Please fill the required field." required></textarea>
+											<input type="reset" value="Clear form" />
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 form-actions">
-											<input class="button" type="submit" value="Send">
+											<input class="button" type="submit"  id="" value="Send">
 										</div>
+										<div id="status-area"></div>
 									</div>
 								</form>
 							</div>
@@ -630,9 +634,11 @@
 			}
 		</script>
 		<script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="bower_components/less.js/dist/less.min.js"></script>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="lib/tween/tween.min.js"></script>
+		<script src="bootstrap/js/contact.js"></script>
 		<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/modernizr/modernizr.js"></script>
 		<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
