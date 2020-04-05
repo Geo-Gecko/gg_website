@@ -8,27 +8,16 @@ const formEvent = form.addEventListener('submit', event => {
    const username = document.querySelector("#username").value;
    const email = document.querySelector("#email").value;
    const message = document.querySelector("#message").value;
+   const myFarm = document.querySelector("#myFarm").checked;
+   const workWithFarmers = document.querySelector("#workWithFarmers").checked;
+   const governmentAgencies = document.querySelector("#governmentAgencies").checked;
+   const unAgencies = document.querySelector("#unAgencies").checked;
+   const physicalSurvey = document.querySelector("#physicalSurvey").checked;
+   const other = document.querySelector("#other").checked;
  
 
-    //get all checked elements 
-    let checkedElement = document.querySelectorAll('.input-contact:checked');
-    let checkedElementValue = [];
-    //loop through all checked element
-    checkedElement.forEach(function(element){
-      checkedElementValue.push(element.value);
-    });
-    if(checkedElementValue.length === 0) {
-      console.log('No item checked')
-    }
-    else { 
-      checkedElementValue
-    }
+   const user = { username, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
 
-  
-
-
-   const user = { username, email,  checkedElementValue,message };
-  //  const user2 = {checkedElementValue};
   
 
    createUser(user);
@@ -39,7 +28,7 @@ const formEvent = form.addEventListener('submit', event => {
 
 const createUser = (user) => {
   console.log("sngrgusus",user);
- // console.log("hafbauja",JSON.stringify(user2));
+
 
     let postObject = {...user}
 axios({
@@ -49,7 +38,6 @@ axios({
       "username": `${postObject.username}`,
       "email": `${postObject.email}`,
       "message": `${postObject.message}`,
-     // "checkedElementValue": `${postObject.}`
     }
   });
 
