@@ -33,11 +33,17 @@ const createUser = (user) => {
     let postObject = {...user}
 axios({
     method: 'post',
-    url: ' https://gg-web-api.herokuapp.com/users/',
+    url: 'https://gg-web-api.herokuapp.com/users/',
     data: {
       "username": `${postObject.username}`,
       "email": `${postObject.email}`,
       "message": `${postObject.message}`,
+      "myFarm": `${postObject.myFarm}`,
+      "workWithFarmers": `${postObject.workWithFarmers}`,
+      "governmentAgencies": `${postObject.governmentAgencies}`,
+      "unAgencies": `${postObject.unAgencies}`,
+      "physicalSurvey": `${postObject.physicalSurvey}`,
+      "other": `${postObject.other}`
     }
   });
 
