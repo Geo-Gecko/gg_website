@@ -27,10 +27,9 @@ const formEvent = form.addEventListener('submit', event => {
 
 
 const createUser = (user) => {
-  console.log("sngrgusus",user);
-
 
     let postObject = {...user}
+
 axios({
     method: 'post',
     url: 'https://gg-web-api.herokuapp.com/users/',
@@ -45,10 +44,29 @@ axios({
       "physicalSurvey": `${postObject.physicalSurvey}`,
       "other": `${postObject.other}`
     }
+  })
+  .then(function (response) {
+    let success = response;
+    if (success === response) {
+      $('#status-area').flash_message({
+        text: 'Thank you for getting in touch!, Please click on clear form button',
+        how: 'append'
+      });
+     }
+    
+  })
+  .catch(function (error) {
+    let badRequest = error;
+    if (badRequest === error) {
+      $('#status-area').flash_message({
+        text: 'Username and Email already exists, Please click on clear form button',
+        how: 'append'
+      });
+      }
+   
   });
 
 }
-
 
 
 //flash message when a user post data to the endpoint 
@@ -81,13 +99,7 @@ axios({
   };
 })(jQuery);
 
-$('.button').click(function() {
 
-  $('#status-area').flash_message({
-    text: 'Thank you for getting in touch!, Please click on clear form button',
-    how: 'append'
-  });
-});
 
 
 
