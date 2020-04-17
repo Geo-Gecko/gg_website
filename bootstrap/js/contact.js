@@ -46,24 +46,19 @@ axios({
     }
   })
   .then(function (response) {
-    let success = response;
-    if (success === response) {
       $('#status-area').flash_message({
         text: 'Thank you for getting in touch!, Please click on clear form button',
         how: 'append'
       });
-     }
+     
     
   })
   .catch(function (error) {
-    let badRequest = error;
-    if (badRequest === error) {
       $('#status-area').flash_message({
-        text: 'Username and Email already exists, Please click on clear form button',
+        text: 'You have already sent in information. We shall be in touch with you shortly, Please click on clear form button',
         how: 'append'
       });
-      }
-   
+      
   });
 
 }
