@@ -123,6 +123,14 @@
 			<div id='map-popups-js' class='map' style="height:800px;"> </div>
 		</div>
 	</div>
+	<div class="overlay-window map-overlay2 colors-f background-95-f">
+		<div class="overlay-control background-90-f">
+			<a class="cross" href="#"></a>
+		</div>
+		<div class="overlay-view">
+	
+	</div>
+	</div>
 
 	<div class="overlay-window credits-overlay colors-g background-95-g">
 		<div class="overlay-control background-85-d">
@@ -602,39 +610,39 @@
 								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="/bootstrap/js/contact.js." id="myForm" method="post" novalidate="novalidate">
 									<div class="row contact">
 										<div class="col-md-6 control-group">
-											<div class="alt-placeholder">Name</div>
-											<input type="text" name="username" id="username" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
+											<div class="alt-placeholder" style="color:#797979;">Name</div>
+											<input type="text" name="your-name" id="username" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-6 control-group">
-											<div class="alt-placeholder">Email</div>
-											<input type="email" name="email" id="email" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
+											<div class="alt-placeholder" style="color:#797979;">Email</div>
+											<input type="email" name="your-email" id="email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 control-group">
 											<p>What is your interest? (Check all that apply)</p>
-											<input type="checkbox" class="input-contact">
-											<label>I'm interested in information on my farm</label><br />
-											<input type="checkbox" class="input-contact">
-											<label>I'm interested in tools that can help me in my work with farmers</label><br />
-											<input type="checkbox" class="input-contact">
-											<label>I'm interested in tools that can help government agencies</label><br />
-											<input type="checkbox" class="input-contact">
-											<label>I'm interested in tools that can help UN agencies / NGOs</label><br />
-											<input type="checkbox" class="input-contact">
-											<label>I'm interested in a physical survey done</label><br />
-											<input type="checkbox" class="input-contact">
-											<label>Other</label>
+											<input type="checkbox" class="input-contact" id="myFarm" name="intereste" value="I'm interested in information on my farm">
+											<label for="myFarm">I'm interested in information on my farm</label><br />
+											<input type="checkbox" class="input-contact" id="workWithFarmers" name="intereste" value="I'm interested in tools that can help me in my work with farmers">
+											<label for="workWithFarmers">I'm interested in tools that can help me in my work with farmers</label><br />
+											<input type="checkbox" class="input-contact" id="governmentAgencies" name="intereste" value="I'm interested in tools that can help government agencies">
+											<label for="governmentAgencies">I'm interested in tools that can help government agencies</label><br />
+											<input type="checkbox" class="input-contact" id="unAgencies" name="intereste" value="I'm interested in tools that can help UN agencies / NGOs">
+											<label for="unAgencies">I'm interested in tools that can help UN agencies / NGOs</label><br />
+											<input type="checkbox" class="input-contact" id="physicalSurvey" name="intereste" value="I'm interested in a physical survey done">
+											<label for="physicalSurvey">I'm interested in a physical survey done</label><br />
+											<input type="checkbox" class="input-contact" id="other" name="intereste" value="Other">
+											<label for="other">Other</label>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 control-group">
-											<div class="alt-placeholder">Message</div>
-											<textarea id="message" placeholder="Message" value="message" data-validation-required-message="Please fill the required field." required></textarea>
-											<!-- <input type="reset" value="Clear form" /> -->
+											<div class="alt-placeholder" style="color:#797979;">Message</div>
+											<textarea name="your-message" placeholder="Message" id="message" data-validation-required-message="Please fill the required field." required></textarea>
+											<input type="reset" value="Clear form" />
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 form-actions">
-											<input class="button" type="submit" id="" value="Send">
+											<input class="button" type="submit" value="Send">
 										</div>
 										<div id="status-area"></div>
 									</div>

@@ -8,28 +8,60 @@ const formEvent = form.addEventListener('submit', event => {
    const username = document.querySelector("#username").value;
    const email = document.querySelector("#email").value;
    const message = document.querySelector("#message").value;
+   const myFarm = document.querySelector("#myFarm").checked;
+   const workWithFarmers = document.querySelector("#workWithFarmers").checked;
+   const governmentAgencies = document.querySelector("#governmentAgencies").checked;
+   const unAgencies = document.querySelector("#unAgencies").checked;
+   const physicalSurvey = document.querySelector("#physicalSurvey").checked;
+   const other = document.querySelector("#other").checked;
+ 
 
-   const user = { username, email, message };
+   const user = { username, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
+
+  
 
    createUser(user);
 });
 
 
 
+
 const createUser = (user) => {
+
     let postObject = {...user}
+
 axios({
     method: 'post',
-    url: ' https://gg-web-api.herokuapp.com/users/',
+    url: 'https://gg-web-api.herokuapp.com/users/',
     data: {
       "username": `${postObject.username}`,
       "email": `${postObject.email}`,
-      "message": `${postObject.message}`
+      "message": `${postObject.message}`,
+      "myFarm": `${postObject.myFarm}`,
+      "workWithFarmers": `${postObject.workWithFarmers}`,
+      "governmentAgencies": `${postObject.governmentAgencies}`,
+      "unAgencies": `${postObject.unAgencies}`,
+      "physicalSurvey": `${postObject.physicalSurvey}`,
+      "other": `${postObject.other}`
     }
+  })
+  .then(function (response) {
+      $('#status-area').flash_message({
+        text: 'Thank you for getting in touch!, Please click on clear form button',
+        how: 'append'
+      });
+     
+    
+  })
+  .catch(function (error) {
+      $('#status-area').flash_message({
+        text: 'You have already sent in information. We shall be in touch with you shortly, Please click on clear form button',
+        how: 'append'
+      });
+      
   });
 
 }
-
 
 
 //flash message when a user post data to the endpoint 
@@ -62,13 +94,7 @@ axios({
   };
 })(jQuery);
 
-$('.button').click(function() {
 
-  $('#status-area').flash_message({
-    text: 'Thank you for getting in touch!, Please click on clear form button',
-    how: 'append'
-  });
-});
 
 
 
