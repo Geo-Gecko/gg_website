@@ -6,6 +6,10 @@ const form = document.querySelector("form");
 const formEvent = form.addEventListener('submit', event => {
    event.preventDefault(); 
    const username = document.querySelector("#username").value;
+   const name = username.split(' ', 2);
+   const groupName = name.values();
+   const FirstName = groupName.next().value;
+   const LastName = groupName.next().value;
    const email = document.querySelector("#email").value;
    const message = document.querySelector("#message").value;
    const myFarm = document.querySelector("#myFarm").checked;
@@ -16,7 +20,7 @@ const formEvent = form.addEventListener('submit', event => {
    const other = document.querySelector("#other").checked;
  
 
-   const user = { username, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
+   const user = {FirstName, LastName, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
 
   
 
@@ -27,14 +31,13 @@ const formEvent = form.addEventListener('submit', event => {
 
 
 const createUser = (user) => {
-
     let postObject = {...user}
-
 axios({
     method: 'post',
     url: 'https://gg-web-api.herokuapp.com/users/',
     data: {
-      "username": `${postObject.username}`,
+      "FirstName": `${postObject.FirstName}`,
+      "LastName": `${postObject.LastName}`,
       "email": `${postObject.email}`,
       "message": `${postObject.message}`,
       "myFarm": `${postObject.myFarm}`,
@@ -50,46 +53,36 @@ axios({
         text: 'Thank you for getting in touch!, Please click on clear form button',
         how: 'append'
       });
-     
-    
   })
   .catch(function (error) {
       $('#status-area').flash_message({
         text: 'You have already sent in information. We shall be in touch with you shortly, Please click on clear form button',
         how: 'append'
-      });
-      
+      });  
   });
-
 }
 
 
 //flash message when a user post data to the endpoint 
 (function($) {
   $.fn.flash_message = function(options) {
-
     options = $.extend({
       text: 'Done',
       time: 3000,
       how: 'before',
       class_name: ''
     }, options);
-
     return $(this).each(function() {
       if ($(this).parent().find('.flash_message').get(0))
         return;
-
       var message = $('<span />', {
         'class': 'flash_message ' + options.class_name,
         text: options.text
       }).hide().fadeIn('fast');
-
       $(this)[options.how](message);
-
       message.delay(options.time).fadeOut('normal', function() {
         $(this).remove();
       });
-
     });
   };
 })(jQuery);
