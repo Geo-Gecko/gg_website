@@ -47,7 +47,13 @@
 		@media (min-width:992px) {
 			.contact_footer {
 				position: relative;
-				left: 28em;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				padding-bottom: 2em;
 			}
 		}
@@ -93,7 +99,7 @@
 					<li><a href="#home" class="hover-effect">Home</a></li>
 					<li><a href="#about" class="hover-effect">What We Do</a></li>
 					<li><a href="#team" class="hover-effect">Who We Are</a></li>
-					<li><a href="#blog" class="hover-effect">Blog</a></li>
+					<li><a href="blog.html" target="_self" class="hover-effect">Blog</a></li>
 					<li><a href="#testimonials" class="hover-effect">Testimonials</a></li>
 					<li><a href="#contact" class="hover-effect">Contact</a></li>
 				</ul>
@@ -154,7 +160,7 @@
 			<div class="content home-alice full-size colors-a background-transparent">
 				<div class="container-fluid">
 					<div class="row head">
-						<div class="col-md-5 col-md-offset-1">
+						<div class="col-md-5" style="padding-left: 9%;">
 							<h1 class="heading text-right" style="text-align: left; color: #ebebeb;">GEO-INTELLIGENCE FOR DECISION MAKING</h1>
 						</div>
 					</div>
@@ -497,7 +503,7 @@
 					<h2>Blog</h2>
 					<p class="header-details"><span class="highlight">We Write</span> As Well</p>
 					<p class="lead">Here you can find the latest on what we're working on and what we find interesting.</p>
-					<div class="row">
+					<div class="row center-block">
 						<div class="col-md-3 top-line">
 							<h4 style="color:#ff7100;">GG<br /> on lockdown</h4>
 							<p class="highlight" style="color: #c3c3c3;text-align: justify;">
@@ -505,30 +511,31 @@
 								3-year old ("Come mama, come, come see this!" "What?" "Cooooooome maaaaaamaaaaaaaaa") and a dog who insists on nervously prancing around me as I type. All of a sudden the office seems like a mythical oasis of calm.. Will we ever be
 								allowed back in, please?
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog-single-2.html">Read More</a>
 						</div>
 						<div class="col-md-3 top-line">
+							<h4 style="color:#ff7100;">Monitoring Forestry Activities</h4>
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">As the world seeks to slow the pace of climate change, preserve wildlife, and support billions increasing numbers of people, trees inevitably hold a major part of the answer. However, we’re losing 9.9 million acres of forests
+								annually in Africa which is twice the world’s average deforestation rate. For example, according to FAO, forest cover in Uganda dropped from 24% to 9% of total land area
+								between 1990 and 2015.
+							</p>
+							<a class="button background-lite-b border-heading-b heading-b" href="blog-single-2.html">Read More</a>
+						</div>						<div class="col-md-3 top-line">
 							<h4 style="color:#ff7100;">UG-EU <br />IMP-EXP</h4>
 							<p class="highlight" style="color: #c3c3c3;text-align: justify;">In 2017/2018, the European Union was the second biggest destination for Uganda's exports with a
 								market share of 20%. Exports from Uganda to the EU grew by 12 % year-on-year to a total value
 								of USD 567 million.
 								#DidYouKnowEUandUganda - All products of Ugandan origin - except for arms - can enter the EU market duty free, quota free!
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
+							<!-- <a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a> -->
 						</div>
 						<div class="col-md-3 top-line">
 							<h4 style="color:#ff7100;">KAMPALA <br />URBAN AGRICULTURE</h4>
-							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Geo Gecko was recently contracted by the Kampala Capital City Authority to document the status and
+							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Geo Gecko was contracted by the Kampala Capital City Authority to document the status and
 								potential of leafy veg and mushroom value chains in Kampala. It was a nice combination of data collection on the ground, via satellite and
 								pre-existing data.
 							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
-						</div>
-						<div class="col-md-3 top-line">
-							<h4 style="color:#ff7100;">WHO WHAT <br />WHERE CASH</h4>
-							<p class="highlight" style="color: #c3c3c3;text-align: justify;">Who is doing what and where are they doing it? Cash working group, Uganda.
-							</p>
-							<a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a>
+							<!-- <a class="button background-lite-b border-heading-b heading-b" href="blog.html">Read More</a> -->
 						</div>
 					</div>
 				</div>
@@ -696,6 +703,8 @@
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="lib/tween/tween.min.js"></script>
 		<script src="bootstrap/js/contact.js"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
 		<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/modernizr/modernizr.js"></script>
 		<script src="bower_components/jquery-cookie/jquery.cookie.js"></script>
