@@ -5,22 +5,26 @@ const form = document.querySelector("form");
 
 const formEvent = form.addEventListener('submit', event => {
    event.preventDefault(); 
-   const username = document.querySelector("#username").value;
-   const name = username.split(' ', 2);
-   const groupName = name.values();
-   const FirstName = groupName.next().value;
-   const LastName = groupName.next().value;
-   const email = document.querySelector("#email").value;
-   const message = document.querySelector("#message").value;
-   const myFarm = document.querySelector("#myFarm").checked;
-   const workWithFarmers = document.querySelector("#workWithFarmers").checked;
-   const governmentAgencies = document.querySelector("#governmentAgencies").checked;
-   const unAgencies = document.querySelector("#unAgencies").checked;
-   const physicalSurvey = document.querySelector("#physicalSurvey").checked;
-   const other = document.querySelector("#other").checked;
+   const username = document.getElementById("username").value.split(" ");
+   let last_name;
+   if (username.length === 1) {
+     last_name = ""
+   } else {
+     last_name = username[1]
+   }
+
+   const first_name = username[0];
+   const email = document.getElementById("email").value;
+   const message = document.getElementById("message").value;
+   const myFarm = document.getElementById("myFarm").checked;
+   const workWithFarmers = document.getElementById("workWithFarmers").checked;
+   const governmentAgencies = document.getElementById("governmentAgencies").checked;
+   const unAgencies = document.getElementById("unAgencies").checked;
+   const physicalSurvey = document.getElementById("physicalSurvey").checked;
+   const other = document.getElementById("other").checked;
  
 
-   const user = {FirstName, LastName, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
+   const user = {first_name, last_name, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
 
   
 
@@ -36,8 +40,8 @@ axios({
     method: 'post',
     url: 'https://gg-web-api.herokuapp.com/users/',
     data: {
-      "FirstName": `${postObject.FirstName}`,
-      "LastName": `${postObject.LastName}`,
+      "first_name": `${postObject.first_name}`,
+      "last_name": `${postObject.last_name}`,
       "email": `${postObject.email}`,
       "message": `${postObject.message}`,
       "myFarm": `${postObject.myFarm}`,
@@ -56,7 +60,8 @@ axios({
   })
   .catch(function (error) {
       $('#status-area').flash_message({
-        text: 'You have already sent in information. We shall be in touch with you shortly, Please click on clear form button',
+        text: "There seems to be an error on our side. \
+        Kindly resend your information at this time tomorrow if we do not get in touch by then",
         how: 'append'
       });  
   });
