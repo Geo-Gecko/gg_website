@@ -614,35 +614,37 @@
 
 						<div class="col-md-6">
 							<div class="text-left scroll-in-animation" data-animation="fadeInRight">
-								<form data-message-class="colors-d background-95 heading border" action="mailto:info@geogecko.com" id="myForm" method="post" novalidate="novalidate" enctype="text/plain">
+								<form class="ajax-form" data-message-class="colors-d background-95 heading border" action="../bootstrap/js/contact.js" id="myForm" method="post" novalidate="novalidate">
 									<div class="row contact">
 										<div class="col-md-6 control-group">
-											<input type="text" name="Name" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
+											<div class="alt-placeholder" style="color:#797979;">Name</div>
+											<input type="text" name="your-name" id="username" value="" size="40" placeholder="Name" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-6 control-group">
-											<input type="email" name="Email" id="email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
+											<div class="alt-placeholder" style="color:#797979;">Email</div>
+											<input type="email" name="your-email" id="email" value="" size="40" placeholder="Email" data-validation-required-message="Please fill the required field." required>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 control-group">
 											<p>What is your interest? (Check all that apply)</p>
-											<input type="checkbox" class="input-contact" id="myFarm" name="Farm Interest" value="I'm interested in information on my farm">
+											<input type="checkbox" class="input-contact" id="myFarm" name="intereste" value="I'm interested in information on my farm">
 											<label for="myFarm">I'm interested in information on my farm</label><br />
-											<input type="checkbox" class="input-contact" id="workWithFarmers" name="Work with farmers interest" value="I'm interested in tools that can help me in my work with farmers">
+											<input type="checkbox" class="input-contact" id="workWithFarmers" name="intereste" value="I'm interested in tools that can help me in my work with farmers">
 											<label for="workWithFarmers">I'm interested in tools that can help me in my work with farmers</label><br />
-											<input type="checkbox" class="input-contact" id="governmentAgencies" name="Tools to work with Government Agencies" value="I'm interested in tools that can help government agencies">
+											<input type="checkbox" class="input-contact" id="governmentAgencies" name="intereste" value="I'm interested in tools that can help government agencies">
 											<label for="governmentAgencies">I'm interested in tools that can help government agencies</label><br />
-											<input type="checkbox" class="input-contact" id="unAgencies" name="Tools to help NGOs" value="I'm interested in tools that can help UN agencies / NGOs">
+											<input type="checkbox" class="input-contact" id="unAgencies" name="intereste" value="I'm interested in tools that can help UN agencies / NGOs">
 											<label for="unAgencies">I'm interested in tools that can help UN agencies / NGOs</label><br />
-											<input type="checkbox" class="input-contact" id="physicalSurvey" name="Would like to use a physical survey" value="I'm interested in a physical survey done">
+											<input type="checkbox" class="input-contact" id="physicalSurvey" name="intereste" value="I'm interested in a physical survey done">
 											<label for="physicalSurvey">I'm interested in a physical survey done</label><br />
-											<input type="checkbox" class="input-contact" id="other" name="Other Interests" value="Other">
+											<input type="checkbox" class="input-contact" id="other" name="intereste" value="Other">
 											<label for="other">Other</label>
 											<div class="help-block"></div>
 										</div>
 										<div class="col-md-12 control-group">
 											<div class="alt-placeholder" style="color:#797979;">Message</div>
-											<textarea name="Message" placeholder="Message" id="message" data-validation-required-message="Please fill the required field." required></textarea>
+											<textarea name="your-message" placeholder="Message" id="message" data-validation-required-message="Please fill the required field." required></textarea>
 											<input type="reset" value="Clear form" />
 											<div class="help-block"></div>
 										</div>
@@ -700,6 +702,8 @@
 		<script src="../bower_components/less.js/dist/less.min.js"></script>
 		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="../lib/tween/tween.min.js"></script>
+		<script src="../bootstrap/js/contact.js"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
 		<script src="../bootstrap/dist/js/bootstrap.min.js?v=1"></script>
 		<script src="../bower_components/modernizr/modernizr.js"></script>
