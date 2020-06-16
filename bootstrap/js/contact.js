@@ -32,7 +32,7 @@ const createUser = (user) => {
 
 axios({
     method: 'post',
-    url: 'https://gg-web-api.herokuapp.com/users/',
+    url: 'http://35.208.17.212:8000/users/',
     data: {
       "username": `${postObject.username}`,
       "email": `${postObject.email}`,
