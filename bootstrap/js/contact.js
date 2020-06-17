@@ -5,7 +5,15 @@ const form = document.querySelector("form");
 
 const formEvent = form.addEventListener('submit', event => {
    event.preventDefault(); 
-   const username = document.querySelector("#username").value;
+   const username = document.getElementById("username").value.split(" ");
+   let last_name;
+   if (username.length === 1) {
+     last_name = ""
+   } else {
+     last_name = username[1]
+   }
+
+   const first_name = username[0];
    const email = document.querySelector("#email").value;
    const message = document.querySelector("#message").value;
    const myFarm = document.querySelector("#myFarm").checked;
@@ -16,7 +24,7 @@ const formEvent = form.addEventListener('submit', event => {
    const other = document.querySelector("#other").checked;
  
 
-   const user = { username, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
+   const user = {first_name, last_name, email, myFarm, workWithFarmers, governmentAgencies, unAgencies, physicalSurvey, other, message };
 
   
 
@@ -32,9 +40,10 @@ const createUser = (user) => {
 
 axios({
     method: 'post',
-    url: 'http://35.208.17.212:8000/users/',
+    url: 'http://127.0.0.1:8000/users/',
     data: {
-      "username": `${postObject.username}`,
+      "first_name": `${postObject.first_name}`,
+      "last_name": `${postObject.last_name}`,
       "email": `${postObject.email}`,
       "message": `${postObject.message}`,
       "myFarm": `${postObject.myFarm}`,
@@ -55,7 +64,8 @@ axios({
   })
   .catch(function (error) {
       $('#status-area').flash_message({
-        text: 'You have already sent in information. We shall be in touch with you shortly, Please click on clear form button',
+        text: "There seems to be an error on our side. \
+        Kindly resend your information at this time tomorrow if we do not get in touch by then",
         how: 'append'
       });
       
