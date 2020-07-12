@@ -40,7 +40,7 @@ const createUser = (user) => {
 
 axios({
     method: 'post',
-    url: 'http://127.0.0.1:8000/users/',
+    url: 'http://35.208.17.212/users/',
     data: {
       "first_name": `${postObject.first_name}`,
       "last_name": `${postObject.last_name}`,
@@ -103,9 +103,3 @@ axios({
     });
   };
 })(jQuery);
-
-
-
-
-
-
