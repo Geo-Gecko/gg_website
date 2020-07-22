@@ -99,100 +99,92 @@
 	<!-- <img alt class="bg" src="images/Background.png" /><img alt class="bg" src="images/Background.png" /> -->
 	<section>
 		<div class="view">
-			<img alt class="bg" src="images/Background.png" /><img alt class="bg" src="images/Background.png" />
-			<div class="content half-size">
-				<div class="container">
-					<h2>Our <span style="color:white;">Blog</span></h2>
-				</div>
-			</div>
-		</div>
-		<div class="view">
 			<div class="content  colors-e background-90-e">
 				<div class="container">
 					<div class="row" style="margin-top: 5%">
 						<div class="col-md-9">
 							<div class="row post">
 								<div class="col-md-3 post-meta">
-									<div class="post-day">6</div>
-									<div class="post-month">July 2017</div>
+									<div class="post-day">22</div>
+									<div class="post-month">Dec 2016</div>
 								</div>
 								<div class="col-md-9">
 									<div class="post-body background-75-e">
-										<div class="post-image" style="text-align: center;">
-											<img class="fluid-width" src="images/refuge001.png"
-												style="height: 470px; width: 92%;" alt="Post with Featured Image">
-										</div>
+										<h3><span class="highlight">So, where is your office?</span></h3>
 										<p>
-										<h3><span class="highlight">Refugee Breakdown</span>
-										</h3>
-										Where did the refugees come from? Where did they go to? We built this tree
-										map using D3 to enable you to drill down into the data.
-										</p> <br>
-									</div>
-								</div>
-							</div>
-							<div class="row post">
-								<div class="col-md-3 post-meta">
-									<div class="post-day">21</div>
-									<div class="post-month">June 2017</div>
-								</div>
-								<div class="col-md-9">
-									<div class="post-body background-75-e">
-										<div class="image-caption">
-											<h3><span class="highlight">Who What Where, The Refugee Response</span>
-											</h3>
+											A customer is asking where our office is. How do we explain? We can do it in
+											quite a few ways…
+										<ol>
+											<li>Our office is in Kololo I Parish but more commonly known as Kamwokya or
+												Kisementi.</li>
+											<li>We are at Plot 30 Bukoto Street according to Open Street Map and to the
+												city authorities two months back.</li>
+										</ol>
+										<h5 class="highlight"><em>“Where dost thou locate me? Let me count the
+												ways”</em></h5>
+										<ol start="3">
+											<li>We're at Plot 20 Bukoto Street according to the new address system (see
+												an example in the image below). The road name is likely to change soon
+												too.</li>
+											<li>We’re on the left about 150m down Bukoto Road/Street from the Acacia
+												mall side.</li>
+											<li>We are near Cavendish university and Alliance Francais and opposite a
+												Yellow Red Bar. You’ll see our sign.</li>
+											<li>We are at any of these coordinates if we use just one of the multiple
+												projection systems.</li>
+										</ol>
+										<div class="post-image" style="text-align: end;">
+											<img class="fluid-width" style="width: 30% !important;"
+												src="images/office_location.png" alt="Post with Featured Image">
 										</div>
-										<p>Who is doing what and where are they doing it?</p>
-										<iframe width="100%" height="500px" frameborder="0"
-											src="https://dj5hat6hpqdn7.cloudfront.net#actor" allowfullscreen
-											webkitallowfullscreen mozallowfullscreen oallowfullscreen
-											msallowfullscreen></iframe>
-									</div>
-								</div>
-							</div>
-							<div class="row post">
-								<div class="col-md-3 post-meta">
-									<div class="post-day">8</div>
-									<div class="post-month">June 2017</div>
-								</div>
-								<div class="col-md-9">
-									<div class="post-body background-75-e">
+										Kampala city authorities are assigning a new addressing system. Plots have been
+										given new numbers, creating confusion.
+										<ul>
+											<li>Decimal Degrees 0.340124° 32.588088°</li>
+											<li>Degrees Minutes Seconds 0°20'24.45"N 32°35'17.12"E</li>
+											<li>Degrees Decimal Minutes 0° 20.407'N 32° 35.285'E</li>
+											<li>Universal Transverse Mercator 36N 454164.39 m E 37594.09 m N</li>
+											<li>Military Grid Reference System 36NVF5416437594</li>
+										</ul>
+										</p>
+										<h5 class="highlight">It's Complicated</h5>
 										<p>
-										<h3><span class="highlight">Refugees: Origin and Destination</span>
-										</h3>
-										Where did the refugees come from and what Ugandan district did they come to?
-										Check out our chord chart to
-										<a href="https://geo-gecko.github.io/chord_chart/" target="_blank">see</a>
-										.</p>
+											It’s hard to communicate location, especially in developing countries. There
+											is no standard. It's either too general (near the mango tree) or too
+											specific and human unfriendly (Universal Transverse Mercator 36N 454164.39 m
+											E 37594.09 m N).
+										</p>
+										<p>
+											How do they develop property taxes if they don’t have formal addresses? How
+											long does it take the police to find your house as a thief is breaking in?
+											How does Pizza Hut bring your dinner (you really should cook at home more by
+											the way) or the villager report the damaged borehole that is no-where near a
+											road?
+										</p>
+										<p>
+											So we decided to use something called What3Words to assign a human friendly
+											location code to every building in the city. What3Words divided the entire
+											world into 3*3m grids and assigned three words to each. So now we can say
+											over the phone that we’re located at Ambition.Waxer.Shuttled and our contact
+											can enter that into the W3W app to navigate here with ease. Try doing that
+											with Universal Transverse Mercator 36N 454164.39 m E 37594.09 m N.
+										</p>
+										<p>We're speaking to the Ugandan Police Force and the Kampala city authorities
+											about using this for their work. </p>
+										<p>
+											Have a play about with the map below. Click on each of the 399,388 and you
+											won't find one with the same reference. If you do, you win a free interwebs!
+										</p>
+										<iframe src="https://geointelligence.carto.com/builder/b0488632-bddf-11e6-9f62-0e233c30368f/embed" height="500px"
+											allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen
+											width="100%" frameborder="0"></iframe>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-3 sidebar page-transition">
-							<div class="title">Recent Posts</div>
-							<ul>
-								<li><a href="blog-single-1.html" target="_self">Monitoring Deforestation and
-										Afforestation...</a></li>
-								<li><a href="blog-single-2.html" target="_self">GG on lockdown</a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row" style="margin-left: 0px; margin-right: 0px;">
-			<div class="text-center col-md-offset-3 col-md-9">
-				<ul class="pagination">
-					<!-- <li><a class="page-transition" href="#">&laquo;</a></li> -->
-					<li><a class="page-transition" href="blog.html" target="_self">1</a></li>
-					<li><a class="page-transition" href="blog2.html" target="_self">2</a></li>
-					<li><a class="page-transition" href="blog3.html" target="_self">3</a></li>
-					<li class="active"><a class="page-transition" href="blog4.html" target="_self">4</a></li>
-					<li><a class="page-transition" href="blog5.html" target="_self">5</a></li>
-					<li><a class="page-transition" href="blog6.html" target="_self">&raquo;</a></li>
-				</ul>
-			</div>
-		</div>
 	</section>
 	<!-- END: Page content -->
 	<!-- BEGIN: Footer -->
